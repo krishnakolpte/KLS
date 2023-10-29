@@ -1,0 +1,87 @@
+/** @format */
+
+@import "../Styles/mixins.scss";
+
+.quote-card {
+    width: 95%;
+    height: 25vh;
+    background-color: $tertioryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    @include ipad {
+        height: 20vh;
+    }
+    @include laptop {
+        height: 30vh;
+    }
+    > .flower-one {
+        color: gray;
+        position: absolute;
+        bottom: -25%;
+        left: -7%;
+        font-size: 100px;
+        font-weight: 900;
+        z-index: 1;
+        @include ipad {
+            left: 20px;
+            bottom: 10px;
+            font-size: 150px;
+        }
+    }
+    > .flower-two {
+        color: gray;
+        position: absolute;
+        top: -20%;
+        right: -5%;
+        font-size: 100px;
+        font-weight: 900;
+        transform: rotate(10deg);
+        z-index: 1;
+        @include ipad {
+            top: -10%;
+            right: -10%;
+            font-size: 300px;
+        }
+    }
+    > .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        > q {
+            color: white;
+            font-family: $inter;
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            z-index: 3;
+            @include laptop {
+                font-size: 1.7rem;
+            }
+        }
+        > p {
+            align-self: flex-end;
+            font-size: 1rem;
+            font-family: $roboto;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: white;
+            margin-right: 40px;
+            z-index: 3;
+            @include laptop {
+                margin-right: 250px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

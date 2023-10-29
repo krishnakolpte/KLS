@@ -1,0 +1,13 @@
+/** @format */
+
+@mixin ipad {
+    @media only screen and (min-width: 700px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: 950px) {
+        @content;
+    }
+}

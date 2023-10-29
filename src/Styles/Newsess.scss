@@ -1,0 +1,27 @@
+/** @format */
+@import "../Styles/mixins.scss";
+
+.latest-news {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.headline {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    > h2 {
+        font-size: 2rem;
+        text-transform: capitalize;
+        color: $secondoryColor;
+    }
+    > p {
+        margin-top: 10px;
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: rgb(87, 87, 87);
+    }
+}

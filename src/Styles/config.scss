@@ -1,0 +1,40 @@
+/** @format */
+//colors used in this website
+
+$primaryColor: #ffffff;
+$secondoryColor: #000000;
+$tertioryColor: #4526a5;
+$gray: rgba(245, 245, 245, 0.788);
+
+//font families used in this website
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap");
+$inter: "Inter", sans-serif;
+$roboto: "Roboto", sans-serif;
+
+//css boilerplate code for this project
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $roboto;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: $primaryColor;
+}
+a {
+    text-decoration: none;
+    color: $secondoryColor;
+}
+
+// importing all components and pages style files
+@import "./Navbar.scss";
+@import "./Home.scss";
+@import "./Footer.scss";
+@import "./Newsess.scss";
+@import "./CustomCarousel.scss";
+@import "./Eents.scss";
+@import "./QuoteCard.scss";
+@import "./About.scss";
+@import "./Courcess.scss";
