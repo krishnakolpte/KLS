@@ -65,20 +65,23 @@
             font-size: 1rem;
             line-height: 20px;
         }
-        > button {
+        > a {
             width: 100%;
-            padding: 10px 20px;
-            border: none;
-            background-color: $tertioryColor;
-            border-radius: 5px;
-            color: white;
-            font-family: $inter;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            &:hover {
-                opacity: 0.8;
+            > button {
+                width: 100%;
+                padding: 10px 20px;
+                border: none;
+                background-color: $tertioryColor;
+                border-radius: 5px;
+                color: white;
+                font-family: $inter;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                font-weight: 700;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }

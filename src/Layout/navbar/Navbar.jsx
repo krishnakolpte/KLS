@@ -27,13 +27,7 @@ const NavDrawer = ({ setOpendrawer }) => (
                     <BiHome />
                     <span className="link-text">Home</span>
                 </Link>
-                <Link
-                    to={"/"}
-                    className="link-btn"
-                    onClick={() => setOpendrawer(false)}>
-                    <AiFillFileAdd />
-                    <span className="link-text">Admissions</span>
-                </Link>
+
                 <Link
                     to={"/courcess"}
                     className="link-btn">
@@ -44,13 +38,20 @@ const NavDrawer = ({ setOpendrawer }) => (
                     </span>
                 </Link>
                 <Link
+                    to={"/fecilities"}
+                    className="link-btn"
+                    onClick={() => setOpendrawer(false)}>
+                    <AiFillFileAdd />
+                    <span className="link-text">Fecilities</span>
+                </Link>
+                <Link
                     to={"/about"}
                     className="link-btn"
                     onClick={() => setOpendrawer(false)}>
                     <span className="link-text">About</span>
                 </Link>
                 <Link
-                    to={"/"}
+                    to={"/contact"}
                     className="link-btn"
                     onClick={() => setOpendrawer(false)}>
                     <span className="link-text">contact</span>
@@ -58,7 +59,7 @@ const NavDrawer = ({ setOpendrawer }) => (
             </div>
             <div className="login-dashboard">
                 <Link
-                    to={"/"}
+                    to={"/login"}
                     className="link-btn"
                     onClick={() => setOpendrawer(false)}>
                     <BiLogIn />
@@ -92,10 +93,10 @@ function Navbar() {
                 </div>
                 <div className="nav-body-middle">
                     <Link to={"/"}>Home</Link>
-                    <Link to={"/"}>Academics</Link>
                     <Link to={"/courcess"}>Courcess</Link>
-                    <Link to={"/about"}>About</Link>
-                    <Link to={"/"}>Contact</Link>
+                    <Link to={"/fecilities"}>Fecilities</Link>
+                    <Link to={"/about"}>About Us</Link>
+                    <Link to={"/contact"}>Contact</Link>
                 </div>
                 <div className="nav-body-right">
                     <Link to={"/"}>

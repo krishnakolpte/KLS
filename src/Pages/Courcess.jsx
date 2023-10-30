@@ -1,5 +1,6 @@
 /** @format */
 
+import { Link } from "react-router-dom";
 import { Headline } from "../Components/Newsess";
 import QuoteCard from "../Components/QuoteCard";
 
@@ -41,7 +42,9 @@ const CourseCard = () => (
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum,
                 nulla.
             </p>
-            <button>Read More</button>
+            <Link to={"/course/id"}>
+                <button>Read More</button>
+            </Link>
         </div>
     </div>
 );

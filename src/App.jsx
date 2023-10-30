@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Footer from "./Layout/navbar/Footer";
 import About from "./Pages/About";
 import Courcess from "./Pages/Courcess";
+import CourseDetail from "./Pages/CourseDetail";
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                 <Route
                     path="/courcess"
                     element={<Courcess />}
+                />
+                <Route
+                    path="/course/:id"
+                    element={<CourseDetail />}
                 />
             </Routes>
             <Footer />
