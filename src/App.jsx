@@ -9,6 +9,8 @@ import Footer from "./Layout/navbar/Footer";
 import About from "./Pages/About";
 import Courcess from "./Pages/Courcess";
 import CourseDetail from "./Pages/CourseDetail";
+import Contact from "./Pages/Contact";
+import Fecilities from "./Pages/Fecilities";
 
 function App() {
     return (
@@ -22,6 +24,14 @@ function App() {
                 <Route
                     path="/about"
                     element={<About />}
+                />
+                <Route
+                    path="/contact"
+                    element={<Contact />}
+                />
+                <Route
+                    path="/fecilities"
+                    element={<Fecilities />}
                 />
                 <Route
                     path="/courcess"

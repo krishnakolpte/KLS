@@ -7,72 +7,102 @@ import QuoteCard from "../Components/QuoteCard";
 function CourseDetail() {
     const sylabus = [
         {
-            sem: "1 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
+            year: "1'st year",
+            sems: [
+                {
+                    semTitle: "1'st Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
+                {
+                    semTitle: "2'nd Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
             ],
         },
         {
-            sem: "2 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
+            year: "2'nd year",
+            sems: [
+                {
+                    semTitle: "3'rd Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
+                {
+                    semTitle: "4'th Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
             ],
         },
         {
-            sem: "3 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
-            ],
-        },
-        {
-            sem: "4 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
-            ],
-        },
-        {
-            sem: "5 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
-            ],
-        },
-        {
-            sem: "6 Sem",
-            subjects: [
-                { name: "sub1" },
-                { name: "sub2" },
-                { name: "sub3" },
-                { name: "sub4" },
-                { name: "sub5" },
-                { name: "sub6" },
+            year: "3'rd year",
+            sems: [
+                {
+                    semTitle: "5'th Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
+                {
+                    semTitle: "6'th Sem",
+                    subjects: [
+                        { name: "sub1" },
+                        { name: "sub2" },
+                        { name: "sub3" },
+                        { name: "sub4" },
+                        { name: "sub5" },
+                        { name: "sub6" },
+                    ],
+                },
             ],
         },
     ];
+    const projects = [
+        {
+            name: "WEb applications",
+        },
+        {
+            name: "Androide applications",
+        },
+        {
+            name: "AI applications",
+        },
+        {
+            name: "Network applications",
+        },
+    ];
+
     return (
         <section className="course-details">
             <div className="course-info">
@@ -99,10 +129,14 @@ function CourseDetail() {
                     {sylabus.map((item, i) => (
                         <Acordian
                             key={i}
-                            sem={item.sem}
-                            subjects={item.subjects}
+                            year={item.year}
+                            sems={item.sems}
                         />
                     ))}
+                    <SubAcordian
+                        semTitle={"Final Projects"}
+                        subjects={projects}
+                    />
                 </div>
             </div>
             <QuoteCard color={"tomato"} />
@@ -112,7 +146,7 @@ function CourseDetail() {
 
 export default CourseDetail;
 
-const Acordian = ({ sem, subjects }) => {
+const Acordian = ({ year, sems }) => {
     const [open, setOpen] = useState(false);
     return (
         <div className="acordian">
@@ -122,11 +156,45 @@ const Acordian = ({ sem, subjects }) => {
                 <div className="icon">
                     {open ? <AiOutlineMinusCircle /> : <AiOutlinePlusCircle />}
                 </div>
-                <p className="title">{sem}</p>
+                <p className="title">{year}</p>
             </div>
             <div
-                className="footer "
+                className="acordian-data"
                 style={{ display: open ? "flex" : "none" }}>
+                {sems.map(({ semTitle, subjects }, i) => (
+                    <div
+                        className="list"
+                        key={i}>
+                        <SubAcordian
+                            semTitle={semTitle}
+                            subjects={subjects}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+const SubAcordian = ({ semTitle, subjects }) => {
+    const [subopen, setSubOpen] = useState(false);
+    return (
+        <div className="acordian">
+            <div
+                className="header"
+                onClick={() => setSubOpen(!subopen)}>
+                <div className="icon">
+                    {subopen ? (
+                        <AiOutlineMinusCircle />
+                    ) : (
+                        <AiOutlinePlusCircle />
+                    )}
+                </div>
+                <p className="title">{semTitle}</p>
+            </div>
+            <div
+                className="acordian-data"
+                style={{ display: subopen ? "flex" : "none" }}>
                 {subjects.map((item, i) => (
                     <div
                         className="list"
@@ -139,3 +207,7 @@ const Acordian = ({ sem, subjects }) => {
         </div>
     );
 };
+
+// const AcordianData = ({ subjects, open }) => (
+
+// );

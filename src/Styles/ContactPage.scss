@@ -1,0 +1,126 @@
+/** @format */
+
+@import "../Styles/mixins.scss";
+
+.contact {
+    margin-top: 70px;
+    width: 100%;
+    height: calc(190vh - 70px);
+    @include ipad {
+        height: calc(100vh - 70px);
+    }
+    > .contact-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+        > .contact-info {
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            @include ipad {
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+            }
+            > .box {
+                width: 90%;
+                height: 380px;
+                background-color: $tertioryColor;
+                border-radius: 10px;
+                box-shadow: 4px 4px 4px gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 10px;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s;
+                position: relative;
+                &:hover {
+                    opacity: 0.8;
+                }
+                @include ipad {
+                    width: 300px;
+                    height: 200px;
+                }
+
+                > .svg {
+                    width: 70px;
+                    height: 70px;
+                    background-color: white;
+                    border-radius: 50%;
+                    transform: translateX(-50%);
+                    border: 1px solid gray;
+                    position: absolute;
+                    top: -35px;
+                    left: 50%;
+                    display: grid;
+                    place-items: center;
+                    > svg {
+                        font-size: 2rem;
+                        color: $tertioryColor;
+                        color: orangered;
+                    }
+                }
+
+                > h2 {
+                    margin-top: 20px;
+                    font-family: $inter;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    @include ipad {
+                        font-size: 2rem;
+                    }
+                }
+                p {
+                    font-family: $roboto;
+                    text-transform: capitalize;
+                    font-size: 0.9rem;
+                    @include ipad {
+                        font-size: 1.3rem;
+                    }
+                }
+                > h3 {
+                    font-family: $inter;
+                    text-transform: unset;
+                    font-size: 1rem;
+                    @include ipad {
+                        font-size: 1.4rem;
+                    }
+                }
+                > h4 {
+                    font-family: $inter;
+                    text-transform: capitalize;
+                    font-size: 1rem;
+                    @include ipad {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+        > .map-location {
+            width: 90%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 10px;
+            }
+        }
+    }
+}
