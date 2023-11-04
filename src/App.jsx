@@ -11,6 +11,11 @@ import Courcess from "./Pages/Courcess";
 import CourseDetail from "./Pages/CourseDetail";
 import Contact from "./Pages/Contact";
 import Fecilities from "./Pages/Fecilities";
+import LoginPage from "./Pages/auth/LoginPage";
+import Dashboard from "./Pages/dashboard/Dashboard";
+import Profile from "./Pages/dashboard/Profile";
+import CreateNews from "./Pages/dashboard/CreateNews";
+import CreateEvent from "./Pages/dashboard/CreateEvent";
 
 function App() {
     return (
@@ -40,6 +45,26 @@ function App() {
                 <Route
                     path="/course/:id"
                     element={<CourseDetail />}
+                />
+                <Route
+                    path="/login"
+                    element={<LoginPage />}
+                />
+                <Route
+                    path="/dashboard"
+                    element={<Dashboard />}
+                />
+                <Route
+                    path="/dashboard/profile"
+                    element={<Profile />}
+                />
+                <Route
+                    path="/dashboard/createnews"
+                    element={<CreateNews />}
+                />
+                <Route
+                    path="/dashboard/createevent"
+                    element={<CreateEvent />}
                 />
             </Routes>
             <Footer />

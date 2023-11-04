@@ -113,6 +113,11 @@ function CourseDetail() {
                 <div className="content">
                     <h2>Batuler in Computer Application</h2>
                     <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Sapiente, perferendis itaque nisi quaerat placeat
+                        eum impedit minus laboriosam consectetur eius!
+                    </p>
+                    <p>
                         <b>Course Duration :</b> 3 years
                     </p>
                     <p>

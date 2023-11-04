@@ -1,0 +1,118 @@
+/** @format */
+
+@import "../Styles/mixins.scss";
+
+.fecilities {
+    margin-top: 70px;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px;
+    @include laptop {
+        padding: 20px 30px;
+    }
+}
+
+.fecility {
+    width: 90%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 5px 5px 3px grey;
+    border-radius: 20px;
+    @include ipad {
+        width: 90%;
+        height: 290px;
+        flex-direction: row;
+        border-radius: 20px;
+    }
+    @include laptop {
+        width: 70%;
+        height: 250px;
+    }
+    > .info {
+        width: 100%;
+        height: 50%;
+        border-radius: 20px 20px 0 0;
+        background-color: $tertioryColor;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10px;
+        padding: 10px 20px;
+        text-align: center;
+        color: white;
+        @include ipad {
+            width: 50%;
+            height: 100%;
+            border-radius: 20px 0 0 20px;
+            flex-direction: column;
+        }
+        @include laptop {
+            width: 40%;
+        }
+        > .svg {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            @include ipad {
+                width: 70px;
+                height: 70px;
+            }
+            @include laptop {
+                width: 100px;
+                height: 100px;
+            }
+            > svg {
+                color: $tertioryColor;
+                font-size: 2rem;
+            }
+        }
+        > h2 {
+            font-family: $inter;
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            @include ipad {
+                font-size: 2rem;
+            }
+        }
+    }
+    > .img {
+        width: 100%;
+        height: 60%;
+        background-color: white;
+        border-radius: 0 20px 20px 0;
+
+        @include ipad {
+            width: 50%;
+            height: 100%;
+            border-radius: 0 20px 20px 0;
+        }
+        @include laptop {
+            width: 60%;
+        }
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 0 20px 20px;
+            @include ipad {
+                width: 100%;
+                height: 100%;
+                border-radius: 0 20px 20px 0;
+            }
+        }
+    }
+}

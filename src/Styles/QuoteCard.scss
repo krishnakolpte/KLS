@@ -4,7 +4,7 @@
 
 .quote-card {
     width: 95%;
-    height: 25vh;
+    min-height: 250px;
     background-color: $tertioryColor;
     display: flex;
     align-items: center;
@@ -16,11 +16,9 @@
     border-radius: 15px;
     padding: 20px;
     @include ipad {
-        height: 20vh;
+        min-height: 200px;
     }
-    @include laptop {
-        height: 30vh;
-    }
+
     > .flower-one {
         color: gray;
         position: absolute;

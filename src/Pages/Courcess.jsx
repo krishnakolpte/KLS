@@ -30,12 +30,14 @@ export default Courcess;
 
 const CourseCard = () => (
     <div className="course-card">
-        <img
-            src={
-                "https://images.pexels.com/photos/798721/pexels-photo-798721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
-            alt="course-img"
-        />
+        <div className="img">
+            <img
+                src={
+                    "https://images.pexels.com/photos/798721/pexels-photo-798721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                }
+                alt="course-img"
+            />
+        </div>
         <div className="couse-info">
             <h2>Pcmb</h2>
             <p>

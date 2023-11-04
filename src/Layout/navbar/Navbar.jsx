@@ -6,7 +6,7 @@ import { AiFillFileAdd } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 
-const NavDrawer = ({ setOpendrawer }) => (
+const NavDrawer = ({ setOpendrawer, user }) => (
     <div className="drawer">
         <div className="opc-layer"></div>
         <div className="drawer-content">
@@ -58,19 +58,30 @@ const NavDrawer = ({ setOpendrawer }) => (
                 </Link>
             </div>
             <div className="login-dashboard">
-                <Link
-                    to={"/login"}
-                    className="link-btn"
-                    onClick={() => setOpendrawer(false)}>
-                    <BiLogIn />
-                    <span className="link-text">Login</span>
-                </Link>
+                {user ? (
+                    <Link
+                        to={"/dashboard"}
+                        className="link-btn"
+                        onClick={() => setOpendrawer(false)}>
+                        <BiLogIn />
+                        <span className="link-text">Dashboard</span>
+                    </Link>
+                ) : (
+                    <Link
+                        to={"/login"}
+                        className="link-btn"
+                        onClick={() => setOpendrawer(false)}>
+                        <BiLogIn />
+                        <span className="link-text">Login</span>
+                    </Link>
+                )}
             </div>
         </div>
     </div>
 );
 
 function Navbar() {
+    const isAdmin = true;
     const [openDrawer, setOpendrawer] = useState(false);
 
     const handleClick = () => {
@@ -99,12 +110,23 @@ function Navbar() {
                     <Link to={"/contact"}>Contact</Link>
                 </div>
                 <div className="nav-body-right">
-                    <Link to={"/"}>
-                        <button>Login</button>
-                    </Link>
+                    {isAdmin ? (
+                        <Link to={"/dashboard"}>
+                            <button>Dashboard</button>
+                        </Link>
+                    ) : (
+                        <Link to={"/login"}>
+                            <button>Login</button>
+                        </Link>
+                    )}
                 </div>
                 <BiMenuAltRight onClick={handleClick} />
-                {openDrawer && <NavDrawer setOpendrawer={setOpendrawer} />}
+                {openDrawer && (
+                    <NavDrawer
+                        setOpendrawer={setOpendrawer}
+                        user={isAdmin}
+                    />
+                )}
             </div>
         </nav>
     );
