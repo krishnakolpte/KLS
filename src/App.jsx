@@ -16,6 +16,8 @@ import Dashboard from "./Pages/dashboard/Dashboard";
 import Profile from "./Pages/dashboard/Profile";
 import CreateNews from "./Pages/dashboard/CreateNews";
 import CreateEvent from "./Pages/dashboard/CreateEvent";
+import Newsess from "./Pages/dashboard/Newsess";
+import Events from "./Pages/dashboard/Events";
 
 function App() {
     return (
@@ -65,6 +67,14 @@ function App() {
                 <Route
                     path="/dashboard/createevent"
                     element={<CreateEvent />}
+                />
+                <Route
+                    path="/dashboard/newsess"
+                    element={<Newsess />}
+                />
+                <Route
+                    path="/dashboard/events"
+                    element={<Events />}
                 />
             </Routes>
             <Footer />

@@ -24,6 +24,18 @@ function Sidebar() {
                 title={"Create Event"}
                 active={location.pathname === "/dashboard/createevent"}
             />
+            <LinkButton
+                url={"/dashboard/newsess"}
+                Icon={RiAddCircleFill}
+                title={"Newsess"}
+                active={location.pathname === "/dashboard/newsess"}
+            />
+            <LinkButton
+                url={"/dashboard/events"}
+                Icon={RiAddCircleFill}
+                title={"Events"}
+                active={location.pathname === "/dashboard/events"}
+            />
         </section>
     );
 }
